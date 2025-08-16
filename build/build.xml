@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<project name="centralVisus" default="do-deploy" basedir="."  xmlns:fx="javafx:com.sun.javafx.tools.ant">
+	<target name="init-fx-tasks">
+		<path id="fxant">
+			<filelist>
+				<file name="${java.home}\..\lib\ant-javafx.jar"/>
+				<file name="${java.home}\lib\jfxrt.jar"/>
+			</filelist>
+		</path>
+	
+		<taskdef resource="com/sun/javafx/tools/ant/antlib.xml"
+			uri="javafx:com.sun.javafx.tools.ant"
+			classpathref="fxant"/>
+	
+		 
+    
+		 
+	
+	
+	
+	
+	</target>
+	<target name="setup-staging-area">
+		<delete dir="externalLibs" />
+		<delete dir="project" />
+		<delete dir="projectRefs" />
+	
+		<mkdir dir="externalLibs" />
+	
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\net\sourceforge\barbecue\barbecue\1.5-beta1">
+				<filename name="barbecue-1.5-beta1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\codehaus\castor\castor-xml\1.4.1">
+				<filename name="castor-xml-1.4.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\javax\inject\javax.inject\1">
+				<filename name="javax.inject-1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\io\vertx\vertx-web-common\3.9.4">
+				<filename name="vertx-web-common-3.9.4.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\jvnet\com4j\com4j\2.1">
+				<filename name="com4j-2.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\commons-collections\commons-collections\3.2.2">
+				<filename name="commons-collections-3.2.2.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\com\jfoenix\jfoenix\9.0.10">
+				<filename name="jfoenix-9.0.10.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\io\netty\netty-codec-dns\4.1.49.Final">
+				<filename name="netty-codec-dns-4.1.49.Final.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\com\lowagie\itext\2.1.7.js8">
+				<filename name="itext-2.1.7.js8.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\net\sf\jasperreports\jasperreports\6.15.0">
+				<filename name="jasperreports-6.15.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\io\netty\netty-resolver\4.1.49.Final">
+				<filename name="netty-resolver-4.1.49.Final.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\apache\ant\ant-launcher\1.7.1">
+				<filename name="ant-launcher-1.7.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\apache\ant\ant\1.7.1">
+				<filename name="ant-1.7.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\avalon-framework\avalon-framework-impl\4.2.0">
+				<filename name="avalon-framework-impl-4.2.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\openjfx\javafx-base\11.0.2">
+				<filename name="javafx-base-11.0.2.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\openjfx\javafx-base\11.0.2">
+				<filename name="javafx-base-11.0.2-win.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\io\netty\netty-codec\4.1.49.Final">
+				<filename name="netty-codec-4.1.49.Final.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\io\vertx\vertx-core\3.9.4">
+				<filename name="vertx-core-3.9.4.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\net\sf\barcode4j\barcode4j\2.1">
+				<filename name="barcode4j-2.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\io\netty\netty-buffer\4.1.49.Final">
+				<filename name="netty-buffer-4.1.49.Final.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\openjfx\javafx-fxml\11.0.2">
+				<filename name="javafx-fxml-11.0.2-win.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\slf4j\slf4j-log4j13\1.0.1">
+				<filename name="slf4j-log4j13-1.0.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\openjfx\javafx-media\14">
+				<filename name="javafx-media-14-win.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\commons-cli\commons-cli\1.0">
+				<filename name="commons-cli-1.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\bouncycastle\bcprov-jdk15on\1.64">
+				<filename name="bcprov-jdk15on-1.64.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\apache\commons\commons-collections4\4.2">
+				<filename name="commons-collections4-4.2.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\junit\junit\3.7">
+				<filename name="junit-3.7.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\openjfx\javafx-graphics\11.0.2">
+				<filename name="javafx-graphics-11.0.2.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\io\netty\netty-transport\4.1.49.Final">
+				<filename name="netty-transport-4.1.49.Final.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\io\netty\netty-handler-proxy\4.1.49.Final">
+				<filename name="netty-handler-proxy-4.1.49.Final.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\com\fasterxml\jackson\core\jackson-databind\2.10.0">
+				<filename name="jackson-databind-2.10.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\jfree\jfreechart\1.0.19">
+				<filename name="jfreechart-1.0.19.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\io\netty\netty-codec-http\4.1.49.Final">
+				<filename name="netty-codec-http-4.1.49.Final.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\openjfx\javafx-media\11.0.2">
+				<filename name="javafx-media-11.0.2.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\jfree\jcommon\1.0.23">
+				<filename name="jcommon-1.0.23.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\io\netty\netty-resolver-dns\4.1.49.Final">
+				<filename name="netty-resolver-dns-4.1.49.Final.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\io\netty\netty-handler\4.1.49.Final">
+				<filename name="netty-handler-4.1.49.Final.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\openjfx\javafx-fxml\11.0.2">
+				<filename name="javafx-fxml-11.0.2.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\com\fasterxml\jackson\core\jackson-annotations\2.10.0">
+				<filename name="jackson-annotations-2.10.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\openjfx\javafx-graphics\14">
+				<filename name="javafx-graphics-14-win.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\openjfx\javafx-controls\14.0.2.1">
+				<filename name="javafx-controls-14.0.2.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\controlsfx\controlsfx\11.0.2">
+				<filename name="controlsfx-11.0.2.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\codehaus\castor\castor-core\1.4.1">
+				<filename name="castor-core-1.4.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\eclipse\jdt\ecj\3.21.0">
+				<filename name="ecj-3.21.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\openjfx\javafx-controls\14.0.2.1">
+				<filename name="javafx-controls-14.0.2.1-win.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\io\vertx\vertx-web-client\3.9.4">
+				<filename name="vertx-web-client-3.9.4.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\commons-digester\commons-digester\2.1">
+				<filename name="commons-digester-2.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\org\apache\commons\commons-lang3\3.4">
+				<filename name="commons-lang3-3.4.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\io\netty\netty-common\4.1.49.Final">
+				<filename name="netty-common-4.1.49.Final.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\commons-logging\commons-logging\1.1.1">
+				<filename name="commons-logging-1.1.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\commons-beanutils\commons-beanutils\1.9.4">
+				<filename name="commons-beanutils-1.9.4.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\com\fasterxml\jackson\core\jackson-core\2.10.0">
+				<filename name="jackson-core-2.10.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\commons-lang\commons-lang\1.0">
+				<filename name="commons-lang-1.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\io\netty\netty-codec-socks\4.1.49.Final">
+				<filename name="netty-codec-socks-4.1.49.Final.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="G:\mavenRepos\io\netty\netty-codec-http2\4.1.49.Final">
+				<filename name="netty-codec-http2-4.1.49.Final.jar"/>
+			</fileset>
+		</copy>
+	
+		<mkdir dir="project" />
+		<copy todir="project">
+			<fileset dir="G:\centralVisus\centralVisus-client">
+				<include name="src\test\java/**" />
+			</fileset>
+		</copy>
+		<copy todir="project">
+			<fileset dir="G:\centralVisus\centralVisus-client">
+				<include name="src\main\java/**" />
+			</fileset>
+		</copy>
+		<copy todir="project">
+			<fileset dir="G:\centralVisus\centralVisus-client">
+				<include name="src\test\resources/**" />
+			</fileset>
+		</copy>
+		<copy todir="project">
+			<fileset dir="G:\centralVisus\centralVisus-client">
+				<include name="src\main\resources/**" />
+			</fileset>
+		</copy>
+	
+		<mkdir dir="projectRefs" />
+	</target>
+	<target name='do-compile'>
+		<delete dir="build" />
+		<mkdir dir="build/src" />
+		<mkdir dir="build/libs" />
+		<mkdir dir="build/classes" />
+	
+		<!-- Copy project-libs references -->
+		<copy todir="build/libs">
+			<fileset dir="externalLibs">
+				<include name="commons-digester-2.1.jar"/>
+				<include name="javafx-fxml-11.0.2.jar"/>
+				<include name="jackson-databind-2.10.0.jar"/>
+				<include name="ecj-3.21.0.jar"/>
+				<include name="netty-buffer-4.1.49.Final.jar"/>
+				<include name="javafx-controls-14.0.2.1-win.jar"/>
+				<include name="ant-1.7.1.jar"/>
+				<include name="avalon-framework-impl-4.2.0.jar"/>
+				<include name="netty-codec-socks-4.1.49.Final.jar"/>
+				<include name="javafx-graphics-14-win.jar"/>
+				<include name="netty-common-4.1.49.Final.jar"/>
+				<include name="netty-transport-4.1.49.Final.jar"/>
+				<include name="castor-xml-1.4.1.jar"/>
+				<include name="vertx-web-common-3.9.4.jar"/>
+				<include name="javafx-graphics-11.0.2.jar"/>
+				<include name="commons-collections-3.2.2.jar"/>
+				<include name="commons-lang3-3.4.jar"/>
+				<include name="jcommon-1.0.23.jar"/>
+				<include name="jfreechart-1.0.19.jar"/>
+				<include name="commons-cli-1.0.jar"/>
+				<include name="javafx-media-14-win.jar"/>
+				<include name="netty-handler-4.1.49.Final.jar"/>
+				<include name="controlsfx-11.0.2.jar"/>
+				<include name="castor-core-1.4.1.jar"/>
+				<include name="netty-codec-4.1.49.Final.jar"/>
+				<include name="barcode4j-2.1.jar"/>
+				<include name="vertx-web-client-3.9.4.jar"/>
+				<include name="netty-codec-dns-4.1.49.Final.jar"/>
+				<include name="netty-resolver-dns-4.1.49.Final.jar"/>
+				<include name="jackson-core-2.10.0.jar"/>
+				<include name="javafx-media-11.0.2.jar"/>
+				<include name="ant-launcher-1.7.1.jar"/>
+				<include name="javax.inject-1.jar"/>
+				<include name="netty-codec-http-4.1.49.Final.jar"/>
+				<include name="commons-logging-1.1.1.jar"/>
+				<include name="javafx-fxml-11.0.2-win.jar"/>
+				<include name="javafx-base-11.0.2.jar"/>
+				<include name="jasperreports-6.15.0.jar"/>
+				<include name="commons-beanutils-1.9.4.jar"/>
+				<include name="jfoenix-9.0.10.jar"/>
+				<include name="netty-resolver-4.1.49.Final.jar"/>
+				<include name="bcprov-jdk15on-1.64.jar"/>
+				<include name="javafx-controls-14.0.2.1.jar"/>
+				<include name="netty-codec-http2-4.1.49.Final.jar"/>
+				<include name="slf4j-log4j13-1.0.1.jar"/>
+				<include name="jackson-annotations-2.10.0.jar"/>
+				<include name="commons-collections4-4.2.jar"/>
+				<include name="com4j-2.1.jar"/>
+				<include name="junit-3.7.jar"/>
+				<include name="commons-lang-1.0.jar"/>
+				<include name="itext-2.1.7.js8.jar"/>
+				<include name="vertx-core-3.9.4.jar"/>
+				<include name="netty-handler-proxy-4.1.49.Final.jar"/>
+				<include name="barbecue-1.5-beta1.jar"/>
+				<include name="javafx-base-11.0.2-win.jar"/>
+			</fileset>
+		</copy>
+	
+		<!-- Copy project references -->
+	
+		<!-- Copy project sources itself -->
+		<copy todir="build/src">
+			<fileset dir="project/src/test/java">
+				<include name="**/*"/>
+			</fileset>
+		</copy>
+		<copy todir="build/src">
+			<fileset dir="project/src/test/resources">
+				<include name="**/*"/>
+			</fileset>
+		</copy>
+		<copy todir="build/src">
+			<fileset dir="project/src/main/resources">
+				<include name="**/*"/>
+			</fileset>
+		</copy>
+		<copy todir="build/src">
+			<fileset dir="project/src/main/java">
+				<include name="**/*"/>
+			</fileset>
+		</copy>
+	
+		<javac includeantruntime="false" source="15" target="15" srcdir="build/src" destdir="build/classes" encoding="UTF-8">
+			<classpath>
+				<fileset dir="build/libs">
+					<include name="*"/>
+				</fileset>
+			</classpath>
+		</javac>
+	
+		<!-- Copy over none Java-Files -->
+		<copy todir="build/classes">
+		<fileset dir="project/src/test/java">
+			<exclude name="**/*.java"/>
+		</fileset>
+		<fileset dir="project/src/test/resources">
+			<exclude name="**/*.java"/>
+		</fileset>
+		<fileset dir="project/src/main/resources">
+			<exclude name="**/*.java"/>
+		</fileset>
+		<fileset dir="project/src/main/java">
+			<exclude name="**/*.java"/>
+		</fileset>
+		</copy>
+	
+	
+	</target>
+	<target name="do-deploy" depends="setup-staging-area, do-compile, init-fx-tasks">
+		<delete file="dist"/>
+		<delete file="deploy" />
+	
+		<mkdir dir="dist" />
+		<mkdir dir="dist/libs" />
+	
+		<copy todir="dist/libs">
+			<fileset dir="externalLibs">
+				<include name="*" />
+			</fileset>
+		</copy>
+	
+	
+		<fx:resources id="appRes">
+			<fx:fileset dir="dist" includes="centralVisus.jar"/>
+			<fx:fileset dir="dist" includes="libs/*"/>
+		</fx:resources>
+	
+		<fx:application id="fxApplication"
+			name="centralVisus"
+			mainClass="main.VisusCentral"
+		/>
+	
+		<mkdir dir="build/classes/META-INF" />
+	
+	
+	
+		<fx:jar destfile="dist/centralVisus.jar">
+			<fx:application refid="fxApplication"/>
+			<fileset dir="build/classes">
+			</fileset>
+			<fx:resources refid="appRes"/>
+	
+			<manifest>
+				<attribute name="Implementation-Vendor" value="Dignitas Software"/>
+				<attribute name="Implementation-Title" value="centralVisus"/>
+				<attribute name="Implementation-Version" value="2.0"/>
+				<attribute name="JavaFX-Feature-Proxy" value="None"/>
+			</manifest>
+		</fx:jar>
+	
+	
+		<mkdir dir="deploy" />
+		<!-- Need to use ${basedir} because somehow the ant task is calculating the directory differently -->
+		<fx:deploy
+			embedJNLP="false"
+			extension="false"
+			includeDT="false"
+			offlineAllowed="true"
+			outdir="${basedir}/deploy"
+			outfile="centralVisus" nativeBundles="exe"
+			updatemode="background" >
+	
+			<fx:platform basedir="${java.home}"/>
+			<fx:info title="centralVisus" vendor="Dignitas Software"/>
+	
+			<fx:application refId="fxApplication"/>
+			<fx:resources refid="appRes"/>
+		</fx:deploy>
+	
+		<fx:csstobin outdir="build/classes">
+			<fileset dir="build/classes" includes="**/*.css"/>
+		</fx:csstobin>
+	
+	</target>
+</project>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="267.0" prefWidth="454.0" style="-fx-border-color: #3498DB;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.IUPresentaciones">
+   <children>
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="48.0" prefWidth="435.0" style="-fx-background-color: #23272A;" AnchorPane.bottomAnchor="280.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="9.0">
+            <children>
+                <Label fx:id="lblHeader" layoutX="126.0" layoutY="15.0" text="Actualización de Presentaciones" />
+            </children>
+      </Pane>
+      <Pane layoutY="56.0" prefHeight="279.0" prefWidth="447.0">
+         <children>
+            <Button fx:id="btnRegistrar" layoutX="247.0" layoutY="232.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="87.0" text="Registrar">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-agregar" />
+               </styleClass>
+            </Button>
+            <Button fx:id="btnCancelar" layoutX="347.0" layoutY="232.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="87.0" text="Cancelar">
+                <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-modificar" />
+               </styleClass>
+            </Button>
+            <JFXTextField fx:id="txtContenedor" labelFloat="true" layoutX="19.0" layoutY="23.0" prefHeight="27.0" prefWidth="196.0" promptText="Ingrese tipo de Contenedor">
+               <tooltip>
+                  <Tooltip text="Caja, Pack, Horma, Pallet, etc." />
+               </tooltip></JFXTextField>
+            <JFXTextField fx:id="txtUnidades" labelFloat="true" layoutX="268.0" layoutY="24.0" promptText="Cantidad de Unidades">
+               <tooltip>
+                  <Tooltip text="Unidades por Contenedor" />
+               </tooltip>
+            </JFXTextField>
+            <JFXTextField fx:id="txtValorUnidades" labelFloat="true" layoutX="19.0" layoutY="90.0" prefHeight="27.0" prefWidth="161.0" promptText="Valor de la Unidad">
+               <tooltip>
+                  <Tooltip text="Valor que identifica a la Unidad &#10;y que representa a la Unidad de &#10;Medida del Artículo" wrapText="true" />
+               </tooltip></JFXTextField>
+            <Separator layoutX="270.0" layoutY="118.0" prefHeight="3.0" prefWidth="157.0" />
+            <Label layoutX="270.0" layoutY="95.0" text="Tipo de Decremento">
+               <tooltip>
+                  <Tooltip text="Descuentos al stock por Existencia o por Cantidad" />
+               </tooltip></Label>
+            <JFXRadioButton fx:id="rbExistencia" alignment="CENTER_LEFT" layoutX="293.0" layoutY="128.0" selected="true" text="Existencia">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tgTipoPosicion" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="rbCantidad" alignment="CENTER_LEFT" layoutX="293.0" layoutY="159.0" text="Cantidad">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tgTipoPosicion" />
+               </toggleGroup>
+            </JFXRadioButton>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

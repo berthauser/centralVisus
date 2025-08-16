@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="798.0" styleClass="BorderPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CrudDomicilios">
+   <top>
+      <Pane prefHeight="54.0" prefWidth="686.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="1.0" prefHeight="55.0" prefWidth="792.0" styleClass="header-pane">
+               <children>
+                  <Label layoutX="313.0" layoutY="-3.0" text="Visus">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="imgPersonas" fitHeight="45.0" fitWidth="51.0" layoutX="5.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="350.0" layoutY="29.0" text="Área de Domicilios">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblFecha" alignment="CENTER" layoutX="667.0" layoutY="-1.0" prefHeight="27.0" prefWidth="119.0" text="28 Jul 2020" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblHora" alignment="CENTER" layoutX="670.0" layoutY="21.0" prefHeight="30.0" prefWidth="112.0" text="11:55:00" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </top>
+   <bottom>
+      <HBox prefHeight="26.0" prefWidth="686.0" spacing="20.0" styleClass="footer-pane" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="16.0" prefWidth="672.0" text="© 2021 * Dignitas Software">
+               <font>
+                  <Font name="System Italic" size="11.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="2.0" top="5.0" />
+               </HBox.margin>
+            </Label>
+            <Label alignment="CENTER_RIGHT" prefHeight="16.0" prefWidth="72.0" text="Ver. 2.0">
+               <font>
+                  <Font name="System Italic" size="11.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </bottom>
+   <left>
+      <TableView fx:id="tblDomicilios" prefHeight="408.0" prefWidth="350.0" style="-fx-border-color: #1565c0;" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn prefWidth="257.0" text="Calle" />
+          <TableColumn prefWidth="89.0" text="Número" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </TableView>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="14.0" prefWidth="326.0" spacing="20.0">
+               <children>
+                  <JFXTextField fx:id="txtBuscar" labelFloat="true" prefHeight="27.0" prefWidth="314.0" promptText="Buscar Domicilios" />
+                  <JFXButton fx:id="btnLimpiar" prefHeight="27.0" prefWidth="88.0" style="-fx-background-color: #3498DB; -fx-Text-Fill: White;" text="Limpiar" />
+               </children></HBox>
+            <HBox prefHeight="4.0" prefWidth="326.0" spacing="5.0">
+               <children>
+                  <JFXTextField fx:id="txtNroDocumento" editable="false" labelFloat="true" prefHeight="27.0" prefWidth="206.0" promptText="N° Documento" />
+                  <JFXTextField fx:id="txtTipoPersona" editable="false" labelFloat="true" prefHeight="27.0" prefWidth="188.0" promptText="Tipo de Persona" />
+               </children></HBox>
+            <HBox prefHeight="16.0" prefWidth="316.0" spacing="5.0">
+               <children>
+                  <JFXComboBox fx:id="cmbLocalidad" labelFloat="true" prefHeight="27.0" prefWidth="320.0" promptText="Elija una Localidad" />
+                  <Label fx:id="lblCodigoPostal" text="Código Postal">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children></HBox>
+            <HBox layoutX="10.0" layoutY="127.0" prefHeight="42.0" prefWidth="336.0" spacing="8.0">
+               <children>
+                  <TitledPane animated="false" collapsible="false" prefHeight="209.0" prefWidth="164.0" text="Tipo de Domicilio">
+                     <content>
+                        <VBox prefHeight="186.0" prefWidth="197.0" spacing="20.0">
+                           <children>
+                              <JFXRadioButton fx:id="rbParticular" selected="true" style="-fx-text-fill: #121212;" text="Particular">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="tgDomicilio" />
+                                 </toggleGroup>
+                              </JFXRadioButton>
+                              <JFXRadioButton fx:id="rgLegal" layoutX="20.0" layoutY="84.0" style="-fx-text-fill: #121212;" text="Legal" toggleGroup="$tgDomicilio" />
+                              <JFXRadioButton fx:id="rbFiscal" layoutX="20.0" layoutY="57.0" style="-fx-text-fill: #121212;" text="Fiscal" toggleGroup="$tgDomicilio" />
+                              <JFXRadioButton fx:id="rbSinIdentificar" layoutX="20.0" layoutY="94.0" style="-fx-text-fill: #121212;" text="Sin Identificar" toggleGroup="$tgDomicilio" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </TitledPane>
+                  <VBox prefHeight="200.0" prefWidth="251.0" spacing="15.0">
+                     <children>
+                        <JFXTextField fx:id="txtCalle" labelFloat="true" prefHeight="27.0" prefWidth="136.0" promptText="Calle">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <HBox prefHeight="19.0" prefWidth="201.0" spacing="5.0">
+                           <children>
+                              <JFXTextField fx:id="txtNumero" labelFloat="true" prefHeight="27.0" prefWidth="188.0" promptText="Número" />
+                              <JFXTextField fx:id="txtPiso" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="188.0" promptText="Piso" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="57.0" prefHeight="19.0" prefWidth="201.0" spacing="5.0">
+                           <children>
+                              <JFXTextField fx:id="txtDepartamento" labelFloat="true" prefHeight="27.0" prefWidth="188.0" promptText="Departamento" />
+                              <JFXTextField fx:id="txtManzana" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="188.0" promptText="Manzana" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="99.0" prefHeight="19.0" prefWidth="201.0" spacing="5.0">
+                           <children>
+                              <JFXTextField fx:id="txtSeccion" labelFloat="true" prefHeight="27.0" prefWidth="188.0" promptText="Sección" />
+                              <JFXTextField fx:id="txtCasa" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="188.0" promptText="Casa" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="141.0" prefHeight="19.0" prefWidth="201.0" spacing="5.0">
+                           <children>
+                              <JFXTextField fx:id="txtBarrio" labelFloat="true" prefHeight="27.0" prefWidth="188.0" promptText="Barrio" />
+                              <JFXTextField fx:id="txtCPA" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="188.0" promptText="CPA" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="8.0" prefWidth="316.0" spacing="15.0">
+               <children>
+                  <JFXButton fx:id="btnAgregar" prefHeight="27.0" prefWidth="70.0" styleClass="btn-agregar" text="Agregar" />
+                  <JFXButton fx:id="btnBorrar" prefHeight="27.0" prefWidth="75.0" styleClass="btn-borrar" text="Borrar" />
+                  <JFXButton fx:id="btnModificar" prefHeight="27.0" prefWidth="79.0" styleClass="btn-modificar" text="Modificar" />
+                  <JFXButton fx:id="btnImprimir" prefHeight="27.0" prefWidth="75.0" style="-fx-background-color: #3498DB; -fx-text-fill: White;" text="Imprimir" />
+                  <JFXButton fx:id="btnSalir" alignment="CENTER" prefHeight="27.0" prefWidth="71.0" styleClass="btn-operaciones" text="Salir" />
+               </children></HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

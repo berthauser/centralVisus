@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" prefHeight="643.0" prefWidth="1024.0" styleClass="BorderPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Personas">
+   <top>
+      <Pane prefHeight="55.0" prefWidth="1005.0" style="-fx-background-color: #566573;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="430.0" layoutY="-3.0" text="Visus">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imgPersonas" fitHeight="45.0" fitWidth="51.0" layoutX="5.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imgSecurity" fitHeight="23.0" fitWidth="23.0" layoutX="53.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="467.0" layoutY="29.0" text="Área de Personas">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblFecha" alignment="CENTER" layoutX="896.0" layoutY="-1.0" prefHeight="27.0" prefWidth="119.0" text="28 Jul 2020" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <Label fx:id="lblHora" alignment="CENTER" layoutX="899.0" layoutY="21.0" prefHeight="30.0" prefWidth="112.0" text="11:55:00" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </BorderPane.margin>
+      </Pane>
+   </top>
+   <bottom>
+      <HBox prefHeight="26.0" prefWidth="1022.0" spacing="20.0" styleClass="footer-pane" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="16.0" prefWidth="927.0" text="© 2021 * Dignitas Software">
+               <font>
+                  <Font name="System Italic" size="11.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="4.0" top="5.0" />
+               </HBox.margin>
+            </Label>
+            <Label layoutX="422.0" layoutY="10.0" prefHeight="16.0" prefWidth="72.0" text="Ver. 2.0">
+               <font>
+                  <Font name="System Italic" size="11.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </bottom>
+   <right>
+      <VBox prefHeight="572.0" prefWidth="201.0" spacing="5.0" styleClass="vbox-right" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <VBox prefHeight="42.0" prefWidth="192.0" style="-fx-border-color: #2196F3;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="29.0" prefWidth="197.0" styleClass="labels-header-ticket" text="Datos Auxiliares">
+                     <VBox.margin>
+                        <Insets top="1.0" />
+                     </VBox.margin></Label>
+               </children>
+            </VBox>
+            <HBox prefHeight="54.0" prefWidth="160.0" spacing="5.0">
+               <children>
+                  <JFXButton fx:id="btnDomicilio" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0" styleClass="btn-operaciones">
+                     <graphic>
+                        <ImageView fx:id="imgDomicilios" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Domicilios declarados" />
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton fx:id="btnBancos" contentDisplay="GRAPHIC_ONLY" ellipsisString="" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0" styleClass="btn-operaciones">
+                     <graphic>
+                        <ImageView fx:id="imgBancos" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Bancos y cuentas" />
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton fx:id="btnZonas" contentDisplay="GRAPHIC_ONLY" ellipsisString="" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0" styleClass="btn-operaciones">
+                     <graphic>
+                        <ImageView fx:id="imgZonas" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Asignar Zonas" />
+                     </tooltip>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="54.0" prefWidth="160.0" spacing="5.0">
+               <children>
+                  <JFXButton fx:id="btnCorreos" contentDisplay="GRAPHIC_ONLY" ellipsisString="" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0" styleClass="btn-operaciones">
+                     <graphic>
+                        <ImageView fx:id="imgCorreos" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Correos electrónicos" wrapText="true" />
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton fx:id="btnTelefono" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" layoutX="140.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0" styleClass="btn-operaciones">
+                     <graphic>
+                        <ImageView fx:id="imgTelefonos" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Comisiones asignadas" />
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton fx:id="btnComisiones" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0" styleClass="btn-operaciones">
+                     <graphic>
+                        <ImageView fx:id="imgComisiones" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Comisiones asignadas" />
+                     </tooltip></JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="1.0" left="1.0" right="1.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="16.0" layoutY="126.0" prefHeight="54.0" prefWidth="160.0" spacing="5.0">
+               <children>
+                  <JFXButton fx:id="btnListas" contentDisplay="GRAPHIC_ONLY" ellipsisString="" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0" styleClass="btn-operaciones">
+                     <graphic>
+                        <ImageView fx:id="imgListas" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Listas de Precios asignadas" wrapText="true" />
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" ellipsisString="" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0" styleClass="btn-operaciones">
+                     <graphic>
+                        <ImageView fx:id="imgVales" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Sin uso" />
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton fx:id="btnSalir" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="60.0" styleClass="btn-operaciones">
+                     <graphic>
+                        <ImageView fx:id="imgSalir" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Sale de la pantalla" />
+                     </tooltip>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="1.0" left="1.0" right="1.0" />
+               </VBox.margin>
+            </HBox>
+            <Separator prefWidth="200.0" style="-fx-background-color: #3cab5b;" />
+            <Button fx:id="btnAgregar" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" text="Agregar">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-agregar" />
+               </styleClass>
+               <VBox.margin>
+                  <Insets top="145.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnBorrar" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" text="Borrar">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-borrar" />
+               </styleClass>
+            </Button>
+            <Button fx:id="btnModificar" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" text="Modificar">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-modificar" />
+               </styleClass>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="2.0" right="2.0" top="2.0" />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+   <center>
+      <HBox prefHeight="572.0" prefWidth="802.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="532.0" prefWidth="348.0">
+               <children>
+                  <HBox prefHeight="454.0" prefWidth="348.0" spacing="5.0">
+                     <children>
+                        <VBox prefHeight="426.0" prefWidth="160.0" spacing="28.0">
+                           <children>
+                              <TitledPane animated="false" collapsible="false" prefHeight="269.0" prefWidth="160.0" text="Tipo de Persona">
+                                 <content>
+                                    <VBox prefHeight="250.0" prefWidth="152.0" spacing="20.0">
+                                       <children>
+                                          <JFXRadioButton fx:id="rbCliente" selected="true" style="-fx-text-fill: #121212;" text="Cliente">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="tgTipoPersona" />
+                                             </toggleGroup>
+                                          </JFXRadioButton>
+                                          <JFXRadioButton fx:id="rbProveedor" style="-fx-text-fill: #121212;" text="Proveedor" toggleGroup="$tgTipoPersona" />
+                                          <JFXRadioButton fx:id="rbTransportista" layoutX="20.0" layoutY="52.0" style="-fx-text-fill: #121212;" text="Transportista" toggleGroup="$tgTipoPersona" />
+                                          <JFXRadioButton fx:id="rbEmpresa" layoutX="20.0" layoutY="84.0" style="-fx-text-fill: #121212;" text="Empresa" toggleGroup="$tgTipoPersona" />
+                                          <JFXRadioButton fx:id="rbStaff" layoutX="20.0" layoutY="116.0" style="-fx-text-fill: #121212;" text="Staff" toggleGroup="$tgTipoPersona" />
+                                          <JFXRadioButton fx:id="rbVendedor" layoutX="20.0" layoutY="148.0" style="-fx-text-fill: #121212;" text="Vendedor" toggleGroup="$tgTipoPersona" />
+                                       </children>
+                                    </VBox>
+                                 </content>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </TitledPane>
+                              <TitledPane animated="false" collapsible="false" prefHeight="127.0" prefWidth="160.0" text="Sexo">
+                                 <content>
+                                    <VBox prefHeight="186.0" prefWidth="197.0" spacing="20.0">
+                                       <children>
+                                          <JFXRadioButton fx:id="rbMasculino" selected="true" style="-fx-text-fill: #121212;" text="Masculino">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="tgSexo" />
+                                             </toggleGroup>
+                                          </JFXRadioButton>
+                                          <JFXRadioButton fx:id="rbFemenino" layoutX="20.0" layoutY="84.0" style="-fx-text-fill: #121212;" text="Femenino" toggleGroup="$tgSexo" />
+                                          <JFXRadioButton fx:id="rbNoAplica" layoutX="20.0" layoutY="148.0" selected="true" style="-fx-text-fill: #121212;" text="No Aplica" toggleGroup="$tgSexo" />
+                                       </children>
+                                    </VBox>
+                                 </content>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </TitledPane>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="426.0" prefWidth="183.0" spacing="28.0">
+                           <children>
+                              <JFXTextField fx:id="txtDocumento" labelFloat="true" prefHeight="27.0" prefWidth="89.0" promptText="Documento">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin></JFXTextField>
+                              <JFXComboBox fx:id="cmbSituacionFiscal" labelFloat="true" prefHeight="27.0" prefWidth="234.0" promptText="Situación Fiscal" />
+                              <JFXTextField fx:id="txtCuit" editable="false" labelFloat="true" prefHeight="24.0" prefWidth="169.0" promptText="CUIT" />
+                              <JFXDatePicker fx:id="dpFechaIngreso" promptText="Fecha de Ingreso" />
+                              <JFXDatePicker fx:id="dpFechaUltimaCompra" editable="false" layoutX="10.0" layoutY="154.0" promptText="Fecha Última Compra">
+                                 <tooltip>
+                                    <Tooltip text="Campo automático. Se actualiza con cada compra" />
+                                 </tooltip></JFXDatePicker>
+                              <JFXTextField fx:id="txtLimiteCredito" labelFloat="true" layoutX="10.0" layoutY="107.0" prefHeight="24.0" prefWidth="169.0" promptText="Límite de Crédito">
+                                 <tooltip>
+                                    <Tooltip text="Valor económico que expresa el límite de compras que puede tener un cliente en relación a su cuenta corriente" textAlignment="JUSTIFY" wrapText="true" />
+                                 </tooltip></JFXTextField>
+                              <JFXTextField fx:id="txtLimiteFacturasVencidas" labelFloat="true" layoutX="10.0" layoutY="154.0" prefHeight="24.0" prefWidth="169.0" promptText="Límite de Facturas Vencidas">
+                                 <tooltip>
+                                    <Tooltip text="El valor expresa la cantidad de facturas impagas que puede tener el cliente. Si en la próxima compra supera este valor, se inhibe la venta a este cliente." wrapText="true" />
+                                 </tooltip></JFXTextField>
+                              <JFXTextField fx:id="txtPagoMinimo" labelFloat="true" layoutX="10.0" layoutY="201.0" prefHeight="24.0" prefWidth="169.0" promptText="Pago Mínimo">
+                                 <tooltip>
+                                    <Tooltip text="Si hay saldos en cuenta corriente, este es el valor mínimo." />
+                                 </tooltip></JFXTextField>
+                              <JFXTextField fx:id="txtSaldoCuentaCorriente" editable="false" labelFloat="true" layoutX="10.0" layoutY="248.0" prefHeight="24.0" prefWidth="169.0" promptText="Saldo en Cuenta Cte." />
+                           </children>
+                           <padding>
+                              <Insets top="3.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <JFXTextArea fx:id="txaObservaciones" labelFloat="true" prefHeight="63.0" prefWidth="348.0" promptText="Observaciones">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin></JFXTextArea>
+               </children>
+            </VBox>
+            <VBox prefHeight="559.0" prefWidth="212.0" spacing="25.0">
+               <children>
+                  <JFXTextField fx:id="txtApellido" labelFloat="true" prefHeight="27.0" prefWidth="105.0" promptText="Apellido">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin></JFXTextField>
+                  <JFXTextField fx:id="txtNombre" labelFloat="true" prefHeight="27.0" prefWidth="83.0" promptText="Nombre" />
+                  <JFXTextField fx:id="txtDocumentoTitular" labelFloat="true" prefHeight="27.0" prefWidth="89.0" promptText="Documento del Titular" />
+                  <TitledPane animated="false" collapsible="false" prefHeight="363.0" prefWidth="212.0" text="Parentesco">
+                     <content>
+                        <VBox prefHeight="186.0" prefWidth="197.0" spacing="20.0">
+                           <children>
+                              <JFXRadioButton fx:id="rbHijo" style="-fx-text-fill: #121212;" text="Hijo/a">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="tgParentesco" />
+                                 </toggleGroup>
+                              </JFXRadioButton>
+                              <JFXRadioButton fx:id="rbHermano" layoutX="20.0" layoutY="84.0" style="-fx-text-fill: #121212;" text="Hermano/a" toggleGroup="$tgParentesco" />
+                              <JFXRadioButton fx:id="rbPadre" layoutX="20.0" layoutY="148.0" style="-fx-text-fill: #121212;" text="Padre" toggleGroup="$tgParentesco" />
+                              <JFXRadioButton fx:id="rbMadre" layoutX="20.0" layoutY="84.0" style="-fx-text-fill: #121212;" text="Madre" toggleGroup="$tgParentesco" />
+                              <JFXRadioButton fx:id="rbAbuelo" layoutX="20.0" layoutY="116.0" style="-fx-text-fill: #121212;" text="Abuelo/a" toggleGroup="$tgParentesco" />
+                              <JFXRadioButton fx:id="rbSobrino" layoutX="20.0" layoutY="148.0" style="-fx-text-fill: #121212;" text="Sobrino/a" toggleGroup="$tgParentesco" />
+                              <JFXRadioButton fx:id="rbPrimo" layoutX="20.0" layoutY="180.0" style="-fx-text-fill: #121212;" text="Primo/a" toggleGroup="$tgParentesco" />
+                              <JFXRadioButton fx:id="rbTio" layoutX="20.0" layoutY="212.0" style="-fx-text-fill: #121212;" text="Tío/a" toggleGroup="$tgParentesco" />
+                              <JFXRadioButton fx:id="rbNoCorresponde" layoutX="20.0" layoutY="244.0" selected="true" style="-fx-text-fill: #121212;" text="No Corresponde" toggleGroup="$tgParentesco" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </TitledPane>
+               </children>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+            </VBox>
+            <VBox prefHeight="562.0" prefWidth="205.0" spacing="25.0">
+               <children>
+                  <JFXCheckBox fx:id="cbJubilado" prefHeight="18.0" prefWidth="133.0" text="Jubilado">
+                     <VBox.margin>
+                        <Insets top="21.0" />
+                     </VBox.margin></JFXCheckBox>
+                  <JFXCheckBox fx:id="cbAdherente" prefHeight="18.0" prefWidth="133.0" text="Adherente" />
+                  <JFXDatePicker fx:id="dpFechaBaja" layoutX="10.0" layoutY="13.0" promptText="Fecha de Baja" />
+                  <TitledPane animated="false" collapsible="false" prefHeight="148.0" prefWidth="131.0" text="Tipo de Transporte">
+                     <content>
+                        <VBox prefHeight="186.0" prefWidth="197.0" spacing="20.0">
+                           <children>
+                              <JFXRadioButton fx:id="rbTerrestre" selected="true" style="-fx-text-fill: #121212;" text="Terrrestre">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="tgTipoTransporte" />
+                                 </toggleGroup>
+                              </JFXRadioButton>
+                              <JFXRadioButton fx:id="rbFluvial" layoutX="20.0" layoutY="84.0" style="-fx-text-fill: #121212;" text="Fluvial" toggleGroup="$tgTipoTransporte" />
+                              <JFXRadioButton fx:id="rbAereo" layoutX="20.0" layoutY="148.0" style="-fx-text-fill: #121212;" text="Aéreo" toggleGroup="$tgTipoTransporte" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </TitledPane>
+                  <TitledPane animated="false" collapsible="false" prefHeight="128.0" prefWidth="204.0" text="Estado">
+                     <content>
+                        <VBox prefHeight="186.0" prefWidth="197.0" spacing="20.0">
+                           <children>
+                              <JFXRadioButton fx:id="rbHabilitado" selected="true" style="-fx-text-fill: #121212;" text="Habilitado">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="tgEstado" />
+                                 </toggleGroup>
+                              </JFXRadioButton>
+                              <JFXRadioButton fx:id="rbNoHabilitado" layoutX="20.0" layoutY="84.0" style="-fx-text-fill: #121212;" text="No Habilitado" toggleGroup="$tgEstado" />
+                              <JFXRadioButton fx:id="rbBaja" layoutX="20.0" layoutY="148.0" style="-fx-text-fill: #121212;" text="Baja" toggleGroup="$tgEstado" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </TitledPane>
+               </children>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </center>
+</BorderPane>

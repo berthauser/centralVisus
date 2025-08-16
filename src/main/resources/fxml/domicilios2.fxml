@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ar.frp.controller.Terceros">
+   <children>
+      <HBox layoutY="486.0" prefHeight="25.0" prefWidth="921.0" style="-fx-background-color: #006699;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <SplitPane dividerPositions="0.5625680087051143" layoutX="14.0" layoutY="14.0" prefHeight="551.0" prefWidth="781.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="624.0" prefWidth="539.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <TableView fx:id="tblTerceros" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                        <TableColumn fx:id="colId" prefWidth="32.0" text="ID" />
+                      <TableColumn fx:id="colApyNom" editable="false" prefWidth="323.0" text="Apellido y Nombres" />
+                      <TableColumn fx:id="colCuitCuil" prefWidth="224.0" text="CUIT/CUIL" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="624.0" prefWidth="371.0" style="-fx-background-color: White;">
+               <children>
+                  <JFXTextField fx:id="txtBuscar" labelFloat="true" layoutX="14.0" layoutY="35.0" prefHeight="25.0" prefWidth="242.0" promptText="Buscar Apellido y/o Nombres" />
+                  <JFXButton fx:id="btnLimpiar" layoutX="263.0" layoutY="38.0" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #3498DB; -fx-Text-Fill: White;" text="Limpiar" />
+                  <JFXButton fx:id="btnSalir" layoutX="332.0" layoutY="38.0" prefHeight="25.0" prefWidth="41.0" style="-fx-background-color: #3498DB; -fx-Text-Fill: White;" text="Salir" />
+                  <JFXButton fx:id="btnBuscar" layoutX="14.0" layoutY="71.0" onAction="#buscarTercero" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #3498DB; -fx-Text-Fill: White;" text="Buscar" />
+                  <JFXButton fx:id="btnBuscarTodos" layoutX="106.0" layoutY="71.0" onAction="#buscarTercero" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #3498DB; -fx-Text-Fill: White;" text="Buscar todos" />
+                  <JFXButton fx:id="btnInsertar" layoutX="14.0" layoutY="105.0" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #DAF7A6;" text="Insertar" />
+                  <JFXButton fx:id="btnBorrar" layoutX="106.0" layoutY="105.0" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #DAF7A6;" text="Borrar" />
+                  <JFXButton fx:id="btnModificar" layoutX="198.0" layoutY="105.0" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #DAF7A6;" text="Modificar" />
+                  <JFXButton fx:id="btnImprimir" layoutX="289.0" layoutY="105.0" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #DAF7A6;" text="Imprimir" />
+                  <Pane layoutX="14.0" layoutY="137.0" prefHeight="449.0" prefWidth="360.0" style="-fx-border-color: #DAF7A6; -fx-background-color: White;">
+                     <children>
+                        <JFXTextField fx:id="txtApellidoyNombres" labelFloat="true" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="339.0" promptText="Apellido y Nombres" />
+                        <JFXTextField fx:id="txtCuilCuit" labelFloat="true" layoutX="14.0" layoutY="58.0" prefHeight="25.0" prefWidth="158.0" promptText="CUIT/CUIL (Sin Guiones)" />
+                        <JFXComboBox fx:id="cmbSitIva" labelFloat="true" layoutX="14.0" layoutY="106.0" prefHeight="25.0" prefWidth="259.0" promptText="Elija una situación IVA" />
+                        <JFXTextField fx:id="txtDireccion" labelFloat="true" layoutX="14.0" layoutY="154.0" prefHeight="25.0" prefWidth="339.0" promptText="Dirección" />
+                        <JFXTextField fx:id="txtLocalidad" labelFloat="true" layoutX="14.0" layoutY="200.0" prefHeight="25.0" prefWidth="339.0" promptText="Localidad" />
+                        <JFXComboBox fx:id="cmbProvincia" labelFloat="true" layoutX="14.0" layoutY="254.0" prefHeight="25.0" prefWidth="288.0" promptText="Elija una Provincia" />
+                        <JFXTextField fx:id="txtTelefonos" labelFloat="true" layoutX="14.0" layoutY="299.0" prefHeight="25.0" prefWidth="288.0" promptText="Ingrese Teléfonos" />
+                        <JFXTextField fx:id="txtSaldoApertura" labelFloat="true" layoutX="14.0" layoutY="350.0" prefHeight="25.0" prefWidth="184.0" promptText="Saldo de Apertura (Opcional)" />
+                        <JFXComboBox fx:id="cmbTipoSaldo" labelFloat="true" layoutX="14.0" layoutY="400.0" prefHeight="25.0" prefWidth="184.0" promptText="Tipo de Saldo" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

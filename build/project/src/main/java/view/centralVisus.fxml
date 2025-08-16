@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="829.0" prefWidth="1280.0" styleClass="BorderPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CentralVisus">
+   <left>
+      <Accordion prefHeight="630.0" prefWidth="189.0" BorderPane.alignment="CENTER">
+        <panes>
+          <TitledPane text="INVENTARIO">
+               <content>
+                  <VBox prefHeight="500.0" prefWidth="201.0" spacing="10.0">
+                     <children>
+                        <JFXButton fx:id="btnArticulos" buttonType="RAISED" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" text="Artículos">
+                           <tooltip>
+                              <Tooltip style="-fx-background-color: #F7DC6F; -fx-text-fill: Black;" text="Empty Tooltip" />
+                           </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="btnLineas" buttonType="RAISED" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" text="Líneas" />
+                        <JFXButton fx:id="btnRubros" buttonType="RAISED" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" text="Rubros">
+                           <tooltip>
+                              <Tooltip style="-fx-background-color: #F7DC6F; -fx-text-fill: Black;" text="Empty Tooltip" />
+                           </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="btnPresentaciones" buttonType="RAISED" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" text="Presentaciones">
+                           <tooltip>
+                              <Tooltip style="-fx-background-color: #F7DC6F; -fx-text-fill: Black;" text="Empty Tooltip" />
+                           </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="btnUnidades" buttonType="RAISED" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" text="Unidades de Medida">
+                           <tooltip>
+                              <Tooltip style="-fx-background-color: #F7DC6F; -fx-text-fill: Black;" wrapText="true" />
+                           </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="btnUbicaciones" buttonType="RAISED" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" text="Ubicaciones">
+                           <tooltip>
+                              <Tooltip style="-fx-background-color: #F7DC6F; -fx-text-fill: Black;" text="Empty Tooltip" />
+                           </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="btnDepositos" buttonType="RAISED" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" text="Depósitos">
+                           <tooltip>
+                              <Tooltip style="-fx-background-color: #F7DC6F; -fx-text-fill: Black;" text="Empty Tooltip" />
+                           </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="btnMarcas" buttonType="RAISED" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" text="Marcas">
+                           <tooltip>
+                              <Tooltip style="-fx-background-color: #F7DC6F; -fx-text-fill: Black;" text="Empty Tooltip" />
+                           </tooltip>
+                        </JFXButton>
+                     </children>
+                     <padding>
+                        <Insets bottom="1.0" left="15.0" right="1.0" top="4.0" />
+                     </padding>
+                  </VBox>
+               </content>
+          </TitledPane>
+            <TitledPane animated="false" text="CLIENTES">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton buttonType="RAISED" layoutX="17.0" layoutY="22.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane text="PROVEEDORES">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton buttonType="RAISED" layoutX="16.0" layoutY="30.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;">
+                           <tooltip>
+                              <Tooltip style="-fx-background-color: #F7DC6F; -fx-text-fill: Black;" text="Se ingresan las manifestaciones objetivas y clínicamente fiables que serán usadas en la exploración médica durante la Donación" wrapText="true" />
+                           </tooltip></JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="16.0" layoutY="87.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;">
+                           <tooltip>
+                              <Tooltip style="-fx-background-color: #F7DC6F; -fx-text-fill: Black;" text="Se ingresan las medicaciones generales y que luego se usarán en el Módulo de Donantes" wrapText="true" />
+                           </tooltip></JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="15.0" layoutY="143.0" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" textAlignment="CENTER" wrapText="true">
+                           <tooltip>
+                              <Tooltip style="-fx-background-color: #F7DC6F; -fx-text-fill: Black;" text="En este módulo se arma el Cuestionario de la HC" wrapText="true" />
+                           </tooltip>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+          <TitledPane text="COMPRAS">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton buttonType="RAISED" layoutX="17.0" layoutY="21.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" />
+                        <JFXButton buttonType="RAISED" layoutX="17.0" layoutY="135.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" />
+                        <JFXButton buttonType="RAISED" layoutX="17.0" layoutY="193.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" />
+                        <JFXButton buttonType="RAISED" layoutX="16.0" layoutY="78.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+            <TitledPane layoutX="11.0" layoutY="119.0" text="VENTAS">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton buttonType="RAISED" layoutX="16.0" layoutY="21.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" />
+                        <JFXButton buttonType="RAISED" layoutX="16.0" layoutY="135.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" />
+                        <JFXButton buttonType="RAISED" layoutX="16.0" layoutY="193.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" />
+                        <JFXButton buttonType="RAISED" layoutX="15.0" layoutY="78.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane text="RECURSOS">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton fx:id="btnStaff" buttonType="RAISED" layoutX="17.0" layoutY="75.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" text="Staff">
+                           <tooltip>
+                              <Tooltip style="-fx-background-color: #F7DC6F; -fx-text-fill: black;" text="Se ingresan todos los usuarios del sistema, así como sus direcciones y teléfonos" wrapText="true" />
+                           </tooltip></JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="17.0" layoutY="175.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" text="Categorías">
+                           <tooltip>
+                              <Tooltip style="-fx-background-color: #F7DC6F; -fx-text-fill: black;" text="Se ingresan las categorías asociadas al empleo que luego se usarán en el módulo de Staff." wrapText="true" />
+                           </tooltip></JFXButton>
+                        <JFXButton fx:id="btnLocalidades" buttonType="RAISED" layoutX="17.0" layoutY="24.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6a0080; -fx-text-fill: White;" text="Localidades">
+                           <tooltip>
+                              <Tooltip style="-fx-background-color: #F7DC6F; -fx-text-fill: black;" text="Se ingresan las localidades" wrapText="true" />
+                           </tooltip></JFXButton>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+        </panes>
+         <BorderPane.margin>
+            <Insets bottom="2.0" left="2.0" right="1.0" top="2.0" />
+         </BorderPane.margin>
+      </Accordion>
+   </left>
+   <bottom>
+      <HBox prefHeight="38.0" prefWidth="1279.0" styleClass="footer-pane" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </BorderPane.margin>
+         <children>
+            <Label text="© 2020 * Dignitas Software">
+               <font>
+                  <Font name="System Italic" size="11.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </Label>
+            <Label text="Ver. 2.0">
+               <font>
+                  <Font name="System Italic" size="11.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="1080.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+         </children></HBox>
+   </bottom>
+   <top>
+      <VBox prefHeight="131.0" prefWidth="1280.0" spacing="1.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="60.0" prefWidth="1233.0" styleClass="header-pane">
+               <children>
+                  <ImageView fx:id="imgLogo" fitHeight="67.0" fitWidth="66.0" layoutX="3.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/images/datawarehouse.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="578.0" layoutY="-3.0" text="Visus">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="612.0" layoutY="35.0" text="CENTRAL">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblFecha" alignment="CENTER" layoutX="1152.0" layoutY="1.0" prefHeight="27.0" prefWidth="119.0" text="28 Jul 2020" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblHora" alignment="CENTER" layoutX="1156.0" layoutY="30.0" prefHeight="30.0" prefWidth="112.0" text="11:55:00" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="2.0" right="2.0" top="2.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <MenuBar>
+              <menus>
+                <Menu fx:id="mnu1" mnemonicParsing="false" text="Inventario">
+                  <items>
+                        <Menu mnemonicParsing="false" text="Acción 1">
+                          <items>
+                              <MenuItem fx:id="mnuItem111" mnemonicParsing="false" text="Consulta General" />
+                          </items>
+                        </Menu>
+                    <MenuItem mnemonicParsing="false" text="Salir de Visus Central" />
+                  </items>
+                </Menu>
+                  <Menu fx:id="mnu2" mnemonicParsing="false" text="Clientes">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                    </items>
+                  </Menu>
+                  <Menu fx:id="mnu3" mnemonicParsing="false" text="Proveedores">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                    </items>
+                  </Menu>
+                  <Menu fx:id="mnu4" mnemonicParsing="false" text="Compras">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                    </items>
+                  </Menu>
+                  <Menu fx:id="mnu5" mnemonicParsing="false" text="Ventas">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="mnu6" mnemonicParsing="false" text="Recursos">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                    </items>
+                  </Menu>
+                <Menu fx:id="mnuParametros" mnemonicParsing="false" text="Mantenimiento">
+                  <items>
+                    <MenuItem fx:id="mnuItmParametros" mnemonicParsing="false" text="Parámetros" />
+                  </items>
+                </Menu>
+                <Menu fx:id="mnuAyuda" mnemonicParsing="false" text="Ayuda">
+                  <items>
+                    <MenuItem fx:id="mnuAbout" mnemonicParsing="false" text="Acerca de..." />
+                  </items>
+                </Menu>
+              </menus>
+               <VBox.margin>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </VBox.margin>
+            </MenuBar>
+            <ToolBar prefHeight="58.0" prefWidth="1280.0" style="-fx-background-color: #34515e;">
+              <items>
+                  <JFXButton fx:id="btnLogin" buttonType="RAISED" prefHeight="36.0" prefWidth="84.0" style="-fx-background-color: #3498DB; -fx-Text-Fill: White;" text="Login" />
+                  <JFXButton fx:id="btnSalir" buttonType="RAISED" prefHeight="36.0" prefWidth="84.0" style="-fx-background-color: #009688; -fx-Text-Fill: White;" text="Salir" />
+              </items>
+               <VBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </VBox.margin>
+            </ToolBar>
+         </children>
+         <padding>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </padding>
+      </VBox>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" styleClass="footer-pane">
+              <items>
+                  <JFXButton prefHeight="25.0" prefWidth="193.0" style="-fx-background-color: #1B75BC; -fx-text-fill: White;" textAlignment="RIGHT">
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="193.0" style="-fx-background-color: #E74C3C; -fx-text-fill: White;" textAlignment="RIGHT">
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </JFXButton>
+              </items>
+            </ToolBar>
+            <TableView prefHeight="639.0" prefWidth="1078.0" VBox.vgrow="ALWAYS">
+              <columns>
+                  <TableColumn prefWidth="75.0" />
+                <TableColumn prefWidth="136.0" />
+                <TableColumn minWidth="4.0" prefWidth="170.0" />
+                  <TableColumn prefWidth="85.0" />
+                  <TableColumn prefWidth="84.0" />
+                  <TableColumn prefWidth="106.0" />
+                  <TableColumn prefWidth="46.0" />
+                  <TableColumn prefWidth="105.0" />
+                  <TableColumn prefWidth="121.0" />
+                  <TableColumn prefWidth="166.0" />
+                  <TableColumn prefWidth="75.0" text="Mail" />
+                  <TableColumn prefWidth="75.0" text="Lugar Nacimiento" />
+                  <TableColumn prefWidth="75.0" text="Nacionalidad" />
+                  <TableColumn prefWidth="75.0" text="Ocupación" />
+                  <TableColumn prefWidth="75.0" text="Teléfono" />
+                  <TableColumn prefWidth="50.0" text="Consanguíneo" />
+                  <TableColumn prefWidth="75.0" text="Familiar Paciente" />
+                  <TableColumn prefWidth="75.0" text="Observaciones" />
+                  <TableColumn prefWidth="75.0" text="Fecha Última Donación" />
+                  <TableColumn prefWidth="75.0" text="Lugar Última Donación" />
+              </columns>
+            </TableView>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <padding>
+      <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+   </padding>
+</BorderPane>

@@ -1,0 +1,900 @@
+/*
+ *
+ * @author Ernst von bertHäuser
+ */
+
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 13.0px;
+    -fx-base: #1A4D4D;
+    -fx-accent: #0096C9;
+    -fx-background: #2C2F33;
+    -fx-focus-color: #0093FF;
+    -fx-control-inner-background: #23272A;
+    -fx-text-base-color: #0096B7;
+    -fx-text-background-color: #8099FF;
+    -fx-inner-border: linear-gradient(to bottom,
+        derive(-fx-color,73.6%) 0%,
+          derive(-fx-color,29.2%) 100%);
+    -fx-body-color: linear-gradient(to bottom,
+        derive(-fx-color,34%) 0%,
+        derive(-fx-color,-18%) 100%);
+    -fx-outer-border: derive(-fx-color, -11.15%);
+}
+
+/* VARIABLE DEFINITIONS: Only these 4 variables have to be adjusted, the rest is copy-paste */
+* {
+    -fx-my-menu-color: #263238;                  /* Change according to your needs */
+    -fx-my-menu-color-highlighted: #455a64;      /* Change according to your needs */
+    -fx-my-menu-font-color: #FFFFFF;             /* Change according to your needs */
+    -fx-my-menu-font-color-highlighted: #FFFFFF; /* Change according to your needs */
+}
+
+/* MENU BAR + Top-level MENU BUTTONS */
+/*** The menu bar itself ***/
+.menu-bar {
+    -fx-background-color: -fx-my-menu-color;
+}
+
+/*** Top-level menu itself (not selected / hovered) ***/
+.menu-bar > .container > .menu-button {
+    -fx-background-color: -fx-my-menu-color;
+}
+
+/*** Top-level menu's label (not selected / hovered) ***/
+.menu-bar > .container > .menu-button > .label {
+    -fx-text-fill: -fx-my-menu-font-color;
+}
+
+/*** Top-level menu's label (disabled) ***/
+.menu-bar > .container > .menu-button > .label:disabled {
+    -fx-opacity: 1.0;
+}
+
+/*** Top-level menu itself (selected / hovered) ***/
+.menu-bar > .container > .menu-button:hover,
+.menu-bar > .container > .menu-button:focused,
+.menu-bar > .container > .menu-button:showing {
+    -fx-background-color: -fx-my-menu-color-highlighted;
+}
+
+/*** Top-level menu's label (selected / hovered) ***/
+.menu-bar > .container > .menu-button:hover > .label,
+.menu-bar > .container > .menu-button:focused > .label,
+.menu-bar > .container > .menu-button:showing > .label {
+    -fx-text-fill: -fx-my-menu-font-color-highlighted;
+}
+
+/* MENU ITEM (children of a MENU BUTTON) */
+/*** The item itself (not hovered / focused) ***/
+.menu-item {
+    -fx-background-color: -fx-my-menu-color;
+}
+
+/*** The item's label (not hovered / focused) ***/
+.menu-item .label {
+    -fx-text-fill: -fx-my-menu-font-color;
+}
+
+/*** The item's label (disabled) ***/
+.menu-item .label:disabled {
+    -fx-opacity: 1.0;
+}
+
+/*** The item itself (hovered / focused) ***/
+.menu-item:focused, .menu-item:hovered {
+    -fx-background-color: -fx-my-menu-color-highlighted;
+}
+
+/*** The item's label (hovered / focused) ***/
+.menu-item:focused .label, .menu-item:hovered .label {
+    -fx-text-fill: -fx-my-menu-font-color-highlighted;
+}
+
+/* CONTEXT MENU */
+/*** The context menu that contains a menu's menu items ***/
+.context-menu {
+    -fx-background-color: -fx-my-menu-color;
+}
+
+.titled-pane
+{
+-fx-background-color: #34515e;
+/*-fx-text-base-color:  -fx-text-base-color;*/
+-fx-text-fill:  -fx-text-base-color;
+}
+.titled-pane:focused
+{
+-fx-text-fill: white;
+}
+.titled-pane > .title
+{
+-fx-background-color: -fx-box-border, -fx-inner-border, -fx-body-color;
+-fx-background-insets: 0, 1, 2;
+-fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
+-fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
+}
+
+.titled-pane:focused > .title
+{
+-fx-color: -fx-focus-color;
+}
+
+.titled-pane > .title > .arrow-button
+{
+-fx-background-color: null;
+-fx-background-insets: 0;
+-fx-background-radius: 0;
+-fx-padding: 0.0em 0.25em 0.0em 0.0em; /* 0 3 0 0 */
+}
+
+.titled-pane > .title > .arrow-button .arrow
+{
+-fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+-fx-background-insets: 1 0 -1 0, 0;
+-fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
+-fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+
+.titled-pane:collapsed > .title > .arrow-button .arrow
+{
+-fx-rotate: -90;
+}
+
+.titled-pane > *.content
+{
+-fx-background-color:
+-fx-box-border,
+linear-gradient(to bottom, derive(-fx-color,-02%), derive(-fx-color,65%) 12%,      derive(-fx-color,23%) 88%, derive(-fx-color,50%) 99%, -fx-box-border);
+-fx-background-insets: 0, 0 1 1 1;
+-fx-padding: 0.167em;
+ }
+
+.titled-pane:focused > .title > .arrow-button .arrow
+{
+-fx-background-color: white;
+}
+
+
+/*
+ Objetos para Caja
+
+*/
+#hbBack {
+  -fx-background-color: #9a9a9a;
+}
+
+.vboxCaja {
+  -fx-background-color: #9a9a9a;
+}
+
+.pane1 {
+  -fx-background-color: #686c5e;
+  -fx-background-size: 1200 900;
+  -fx-border-radius: 05 05 05 05;
+  -fx-background-radius: 05 05 05 05;
+ /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
+
+.pane2 {
+  -fx-background-color: #686c5e;
+  -fx-background-size: 1200 900;
+  -fx-border-radius: 10 10 10 10;
+  -fx-background-radius: 10 10 10 10;
+ /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
+
+.pane3 {
+  -fx-background-color: #bdbdbd;
+  -fx-background-size: 1200 900;
+  -fx-border-radius: 10 10 10 10;
+  -fx-background-radius: 10 10 10 10;
+ /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
+
+.pane4 {
+  -fx-background-color: #f4f4f4;
+  -fx-background-size: 1200 900;
+  -fx-border-color: #000000 #f4f4f4 #f4f4f4 #f4f4f4;
+}
+
+
+
+
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Scroll Pane			                                                       *
+ *                                                                             *
+ ******************************************************************************/
+
+.scroll-pane {
+    -fx-background-color: #102a43;
+    /*-fx-background-color: #f5f5f5;*/
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane:focused {
+    -fx-background-insets: 0;
+}
+
+.scroll-pane .corner {
+    -fx-background-insets: 0;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Scroll Bar			                                                       *
+ *                                                                             *
+ ******************************************************************************/
+
+.scroll-bar:vertical > .track-background, .scroll-bar:horizontal > .track-background {
+    -fx-background-color: #F1F1F1;
+    -fx-background-insets: 0.0;
+}
+
+.scroll-bar:vertical > .thumb, .scroll-bar:horizontal > .thumb {
+    -fx-background-color: #BCBCBC;
+    -fx-background-insets: 0.0;
+    -fx-background-radius: 1.0;
+}
+
+/* Up- and Down-Button Padding */
+.scroll-bar:vertical > .increment-button, .scroll-bar:vertical > .decrement-button {
+    -fx-padding: 5 2 5 2;
+}
+
+.scroll-bar > .increment-button, .scroll-bar > .decrement-button, .scroll-bar:hover > .increment-button, .scroll-bar:hover > .decrement-button {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar > .increment-button > .increment-arrow, .scroll-bar > .decrement-button > .decrement-arrow {
+    -fx-background-color: rgb(150.0, 150.0, 150.0);
+}
+
+/* Up Arrow */
+.scroll-bar:vertical > .increment-button > .increment-arrow {
+    -fx-shape: "M298 426h428l-214 214z";
+}
+
+/* Down Arrow */
+.scroll-bar:vertical > .decrement-button > .decrement-arrow {
+    -fx-shape: "M298 598l214-214 214 214h-428z";
+}
+
+/*******************************************************************************
+  Labels grilla            			                                               *
+*******************************************************************************/
+
+.labels-up-MED {
+    -fx-font: bold 10pt "Helvetica";
+    -fx-text-fill: black;
+}
+
+.labels-down-MED {
+    -fx-font: italic 9pt "Helvetica";
+    -fx-text-fill: black;
+}
+
+.labels-up-QTY {
+    -fx-font: bold 10pt "Helvetica";
+    -fx-text-fill: black;
+}
+
+.labels-down-QTY {
+    -fx-font: bold italic 9pt "Helvetica";
+    -fx-text-fill: black;
+}
+
+.vbox-00 {
+  -fx-background-color: #93bf85;
+  -fx-border-radius: 07 0 0 07;
+  -fx-background-radius: 07 0 0 07;
+  /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
+
+.hbox-10 {
+  -fx-background-color: #93bf85;
+    -fx-background-radius: 0 07 07 0;
+}
+
+.vbox-20 {
+  -fx-border-radius: 0 07 07 0;
+}
+
+
+.label1 {
+  -fx-text-fill: black;
+  -fx-font: 13pt "Helvetica";
+}
+
+.label2 {
+  -fx-text-fill: black;
+  -fx-font: bold 10pt "Helvetica";
+}
+
+.label3 {
+  -fx-text-fill: black;
+  -fx-font: bold 20pt "Helvetica";
+}
+
+
+
+
+.vbox-items {
+  -fx-background-color: #F4F4F4;
+  -fx-background-size: 1200 900;
+  -fx-border-radius: 05 05 05 05;
+  -fx-background-radius: 05 05 05 05;
+ /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
+
+.vbox-numpad {
+  -fx-background-color: #9E9E9E;
+  -fx-background-size: 1200 900;
+  -fx-border-radius: 05 05 05 05;
+  -fx-background-radius: 05 05 05 05;
+ /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
+
+
+.delete-button {
+  -fx-background-color: black;
+  -fx-font: bold 10pt "System";
+  -fx-background-radius: 50%;
+  -fx-background-insets: 50%;
+  -fx-text-fill: #fe3323;
+}
+
+
+
+.btnCaja {
+  -fx-background-color: #45483f;
+  -fx-font: bold 15pt "System";
+  -fx-background-radius: 10%;
+}
+
+
+
+.btn-abrir-caja {
+  -fx-background-color: #008000;
+  -fx-font: bold 15pt "System";
+}
+
+
+.selec-grid {
+  -fx-background-color: #686c5e;
+  -fx-vgap: 5;
+  -fx-hgap: 5;
+  -fx-padding: 2, 2, 2, 2;
+}
+
+.oper-grid {
+  -fx-vgap: 10;
+  -fx-hgap: 10;
+  -fx-padding: 4, 4, 4, 4;
+}
+
+
+
+.num-grid {
+  -fx-padding: 10px, 10px, 10px, 10px;
+  -fx-hgap: 10px;
+  -fx-vgap: 35px;
+
+}
+.num-button {
+  -fx-background-color: black;
+  -fx-font: bold 15pt "System";
+  -fx-background-radius: 70%;
+  -fx-background-insets: 70%;
+  -fx-text-fill: #00bb2d;
+}
+
+.num-button:hover {
+  -fx-background-color: black, white, black;
+  -fx-text-fill: white;
+}
+
+#btnEnter {
+  -fx-background-color: #45483f;
+  -fx-font: bold 12pt "System";
+  -fx-background-radius: 15,15,15,15;
+  -fx-background-insets: 0, 1;
+  -fx-text-fill: #00bb2d;
+}
+
+#btnDomicilios {
+  -fx-background-color: #800040;
+  -fx-text-fill: #f9f9f9;
+}
+
+#btnDomicilios:hover {
+  -fx-background-color: #459C45;
+}
+
+
+#btnTelefonos {
+  -fx-background-color: #009975;
+  -fx-text-fill: #f9f9f9;
+}
+
+#btnTelefonos:hover {
+  -fx-background-color: #459C45;
+}
+
+#btnEmails {
+  -fx-background-color: #009c8c;
+  -fx-text-fill: #f9f9f9;
+}
+
+#btnEmails:hover {
+  -fx-background-color: #4AA2BD;
+  -fx-outline: none;
+}
+
+.tooltip {
+ -fx-background-radius: 7 7 7 7;
+ -fx-text-fill: #000000;
+ -fx-background-color:	#eff65a;
+}
+
+/***************** TAGS para el POS ******************************************/
+
+.BorderPane {
+    -fx-border-color: #3498DB;
+}
+
+.header-pane {
+  -fx-background-color: #212121;
+  -fx-background-size: 1200 900;
+  -fx-border-radius: 05 05 05 05;
+  /*-fx-background-radius: 05 05 05 05;*/
+ /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
+
+.jfx-hamburger-icon StackPane {
+    -fx-background-color: #8099f7;
+    -fx-background-radius: 5px;
+    -fx-spacing: 5;
+}
+
+.vbox-left {
+  -fx-background-color: #121212;
+  -fx-background-size: 1200 900;
+}
+
+.btnActivities-Vbox-l {
+  -fx-background-color: #22a57b;
+  -fx-text-fill: #102a43;
+}
+
+.btnCierres-Vbox-l {
+  -fx-background-color: #2196F3;
+  -fx-text-fill: #102a43;
+}
+
+.vbox-center {
+  -fx-background-color: #121212;
+  -fx-padding: 2, 2, 2, 2;
+  -fx-margin: 2, 2, 2, 2;
+  -fx-spacing: 1;
+}
+
+.hbox-header-vbox-center {
+   -fx-background-color: #121212;
+}
+
+.jfx-drawer-header {
+    -fx-background-color: #121212;
+    -fx-padding: 2, 2, 0, 0;
+    -fx-spacing: 2;
+    -fx-background-radius: 5px;
+    -fx-spacing: 5;
+}
+
+.jfx-drawer-left {
+    -fx-background-color: #121212;
+    -fx-padding: 2, 2, 0, 0;
+    -fx-spacing: 2;
+    -fx-background-radius: 5px;
+    -fx-spacing: 5;
+}
+
+.jfx-hamburger-icon-header StackPane {
+    -fx-background-color: #d9e2ec;
+    -fx-background-radius: 4px;
+    -fx-spacing: 2;
+}
+
+.label-items {
+  -fx-padding: 8, 0, 0, 0;
+  -fx-font: bold 10pt "Georgia, serif";
+  -fx-text-fill: #d9e2ec;
+}
+
+.btn-header-item {
+  -fx-font: bold 8pt "Georgia, serif";
+  -fx-margin: 5, 0, 0, 0;
+
+  /* -fx-background-color: #121212; */
+}
+
+
+
+.jfx-hamburger-icon StackPane {
+    -fx-background-color: #8099f7;
+    -fx-background-radius: 5px;
+    -fx-spacing: 5;
+}
+
+.txtItems {
+  -fx-background-color: #102a43;
+  -fx-border-color: #57F582;
+  -fx-font: bold 16pt "System";
+  -fx-text-fill: #d9e2ec;
+}
+
+.cmb-unidades {
+  -fx-background-color: #102a43;
+  -fx-border-color: #57F582;
+  -fx-background-radius: 5, 5, 4, 3;
+  -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+  -fx-padding: 0;
+  -fx-font: bold 16pt "System";
+  -fx-text-fill: #d9e2ec;
+}
+
+.cmb-unidades .list-cell {
+    -fx-background: #486581;
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-text-base-color;
+    -fx-padding: 3 0 2 7;
+    -fx-cell-size: 1.66667em;
+}
+
+.cmb-unidades .list-view {
+    -fx-background: #486581;
+    -fx-background-insets: 0, 1;
+/*    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );*/
+}
+/*
+.cmb-unidades .list-view .list-cell
+{
+    -fx-padding: 4 0 4 5;
+    -fx-background-color: white;
+}*/
+
+.cmb-unidades .list-view .list-cell:filled:selected, .cmb-unidades .list-view .list-cell:filled:selected:hover
+{
+    -fx-background: -fx-accent;
+    -fx-background-color: -fx-selection-bar;
+    -fx-text-fill: -fx-selection-bar-text;
+}
+
+.cmb-unidades .list-view .list-cell:filled:hover
+{
+    -fx-background-color: white;
+    -fx-text-fill: -fx-text-inner-color;
+}
+
+/* .cmb-unidades:hover
+{
+    -fx-color: -fx-hover-base;
+} */
+
+.cmb-unidades:showing
+{
+    -fx-color: -fx-pressed-base;
+}
+
+.cmb-unidades:focused {
+    -fx-background-color: -fx-focus-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-radius: 6.4, 4, 5, 3;
+    -fx-background-insets: -1.4, 0, 1, 2;
+}
+
+.vbox-right {
+  -fx-background-color: #121212;
+  -fx-background-size: 1200 900;
+}
+
+.btnFacturar {
+  -fx-background-color: #4f3b78;
+  -fx-font: bold 11pt "System";
+  -fx-text-fill: #000000;
+  -fx-border-radius: 05 05 05 05;
+  -fx-background-radius: 05 05 05 05;
+}
+
+.btnEfectivo {
+  -fx-background-color: #a9b56d;
+  -fx-font: bold 11pt "System";
+  -fx-text-fill: #000000;
+  -fx-border-radius: 08 08 08 08;
+  -fx-background-radius: 08 08 08 08;
+}
+
+.btnDebito {
+  -fx-background-color: #bcaa3c;
+  -fx-font: bold 11pt "System";
+  -fx-text-fill: #000000;
+  -fx-border-radius: 08 08 08 08;
+  -fx-background-radius: 08 08 08 08;
+}
+
+.btnCredito {
+  -fx-background-color: #bcaa3c;
+  -fx-font: bold 11pt "System";
+  -fx-text-fill: #000000;
+  -fx-border-radius: 08 08 08 08;
+  -fx-background-radius: 08 08 08 08;
+}
+
+.labels-header-ticket {
+    -fx-font: bold 9pt "Helvetica";
+    -fx-text-fill: #ffffff;
+}
+
+.labels-nro-ticket {
+    -fx-font: bold 12pt "Helvetica";
+    -fx-text-fill: #ffffff;
+}
+
+.btn-operaciones {
+    -fx-background-color: #8975B4;
+    -fx-text-fill: #f9f9f9;
+}
+
+
+
+.hbox-Totales {
+  /* -fx-background-color: -fx-focus-color, -fx-outer-border, -fx-inner-border, -fx-body-color; */
+  -fx-margin: 2, 2, 2, 2;
+  -fx-background-color: #607d8b;
+  -fx-background-insets: -1.4, 0, 1, 2;
+}
+
+.label-Subtotal {
+    -fx-font: 10pt "System";
+    -fx-text-fill: white;
+}
+
+.label-Descuento {
+    -fx-font: 10pt "System";
+    -fx-text-fill: #12005e;
+}
+
+.label-Total {
+    -fx-font: bold 12pt "System";
+    -fx-text-fill: white;
+}
+
+.label-GTotal {
+    -fx-font: bold 18pt "System";
+    -fx-text-fill: White;
+}
+
+.footer-pane {
+  -fx-background-color: #212121;
+  -fx-background-size: 1200 900;
+  -fx-border-radius: 05 05 05 05;
+}
+
+/***************** END TAGS para el POS **************************************/
+/*
+
+
+
+
+
+
+
+    TABLE VIEW
+/***** ROW CELLS **************************************************************/
+/* Each row in the table is a table-row-cell. Inside a table-row-cell is any
+  -fx-primary : #2A2E37;
+  -fx-secondary : #cac3bf;
+} */
+
+.table-view {
+  -fx-base: #1e5f74;
+  -fx-control-inner-background: #2A2A2A;
+  -fx-background-color:transparent;
+  -fx-table-cell-border-color: transparent;
+  -fx-padding: 1;
+  -fx-selection-bar-non-focused: #008287 ;
+  -fx-border-color:  #212121;
+}
+
+.table-view .column-header,
+.table-view .column-header-background .filler {
+  -fx-background-color: #1e5f74;
+  -fx-size: 25;
+  -fx-border-width: 0 0 0 0;
+  -fx-text-fill: #d8d8d8;
+  -fx-background-insets: 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 13px;
+    -fx-font-weight:bold;
+    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-text-fill: #d8d8d8;
+    -fx-alignment: center-LEFT;
+    -fx-opacity: 1;
+}
+
+.table-cell {
+    -fx-font-size: 12px;
+    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-text-fill: #d8d8d8;
+    -fx-alignment: center-left;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: #008287;
+}
+
+/* scroll bar starts here */
+
+/* The increment and decrement button CSS class of scrollbar */
+.table-view .increment-button ,.table-view .decrement-button {
+  -fx-background-color:transparent;
+	-fx-background-radius: 2em;
+}
+
+/* The main scrollbar **track** CSS class  */
+.table-view .scroll-bar:horizontal .track,
+.table-view .scroll-bar:vertical .track{
+	-fx-background-color: transparent;
+	-fx-border-color:derive( #6622CC,80%);
+	-fx-background-radius: 2em;
+	-fx-border-radius:2em;
+}
+
+
+/* Tooltip para ERRORES */
+.warning{
+    -fx-border-color: #f0ad4e;
+    -fx-border-width: 1;
+}
+.error{
+    -fx-border-color: #d9534f;
+    -fx-border-width: 1;
+}
+/*********************/
+
+
+/*
+    Pane
+*/
+
+.pane {
+
+
+}
+
+.header-section {
+    -fx-background-color: #2c2f33;
+}
+
+.body-section {
+    -fx-background-color: #373b40;
+}
+
+
+.footer-section {
+    -fx-background-color: #2c2f33;
+}
+
+
+/*
+    tab bar
+*/
+
+.jfx-tab-pane .headers-region {
+    -fx-background-color: #23272A;
+}
+.jfx-tab-pane .tab-header-background {
+    -fx-background-color: #23272A;
+}
+.jfx-tab-pane .tab-selected-line {
+    -fx-stroke: #75bc1b;
+    -fx-stroke-width: 3pt;
+}
+
+
+
+.body {
+    /*-fx-background-color: #2C2F33;*/
+}
+.note {
+    -fx-background-color:  #E2FBE1;
+    -fx-alignment: CENTER;
+}
+.note > .label {
+    -fx-text-fill: #3BB839;
+}
+.title-text {
+    -fx-text-fill: -fx-text-background-color;
+    -fx-font-family: 'segoe ui';
+    -fx-font-size: 18pt;
+}
+.new-user-title {
+    -fx-text-fill: #555;
+    -fx-font-family: 'segoe ui';
+    -fx-font-size: 16pt;
+}
+.status-bar {
+    -fx-padding: .25em .75em;
+}
+.status-bar > .label {
+    -fx-text-fill: -fx-text-base-color;
+}
+.status-bar-disconnected {
+    -fx-background-color: #d53400;
+}
+.status-bar-connected {
+    -fx-background-color: -fx-base;
+}
+/************** BOTONES *************/
+/* BOTONES para CRUD ******/
+.btn {
+    -fx-border-radius: 2px;
+    -fx-padding: .5em 1em;
+}
+.btn:focused {
+    -fx-outline: none;
+}
+.btn-agregar {
+    -fx-background-color: #006db3;
+    -fx-text-fill: #000000;
+}
+.btn-agregar:hover {
+    -fx-background-color: #63ccff;
+}
+.btn-modificar {
+    -fx-background-color: #ba7e1d;
+    -fx-text-fill: #000000;
+}
+.btn-modificar:hover {
+    -fx-background-color: #ffdf7d;
+    -fx-outline: none;
+}
+.btn-borrar {
+    -fx-background-color: #d9534f;
+    -fx-text-fill: #000000;
+}
+.btn-borrar:hover {
+    -fx-background-color: #ff847b;
+    -fx-outline: none;
+}
+.btn-enviar {
+    -fx-background-color: #26872f;
+    -fx-text-fill: #000000;
+}
+.btn-enviar:hover {
+    -fx-background-color: #8feb8b;
+    -fx-outline: none;
+}
+/* FIN BOTONES para CRUD ******/
+
+
+
+
+/* colores para los PROMPT-TEXTFIELD */
+.text-field {
+    -fx-prompt-text-fill: #92549c;
+}
+
+.text-field:empty .text {
+    -fx-effect: null ;
+}
+/*************************************/
+
+.txt-search {
+    -fx-padding: .5em .5em;
+}

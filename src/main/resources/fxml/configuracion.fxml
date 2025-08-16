@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?language rexx?>
+
+<BorderPane prefHeight="538.0" prefWidth="778.0" style="-fx-border-color: #3498DB;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Configuraciones">
+   <center>
+<VBox id="VBox" fillWidth="false" prefHeight="451.0" prefWidth="824.0" spacing="5.0" BorderPane.alignment="CENTER">
+<children>
+            <HBox prefHeight="383.0" prefWidth="808.0" spacing="20.0">
+               <children>
+                  <FlowPane hgap="10.0" prefHeight="481.0" prefWidth="674.0" vgap="25.0">
+                     <children>
+                        <JFXTextField fx:id="txtRazonSocial" prefHeight="27.0" prefWidth="301.0" promptText="Razón Social">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Razón Social de la Empresa" />
+                           </tooltip>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtNombreFantasia" prefHeight="27.0" prefWidth="292.0" promptText="Nombre de Fantasía">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Nombre de fantasía de la empresa" />
+                           </tooltip>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtEmail" prefHeight="27.0" prefWidth="209.0" promptText="Correo Electrónico">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Email" />
+                           </tooltip>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtDomicilioComercial" prefHeight="27.0" prefWidth="386.0" promptText="Domicilio Comercial">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Domicilio Comercial completo" />
+                           </tooltip>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtLocalidad" prefHeight="27.0" prefWidth="287.0" promptText="Localidad">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Localidad" />
+                           </tooltip>
+                        </JFXTextField>
+                        <JFXComboBox fx:id="cmbProvincia" prefHeight="27.0" prefWidth="186.0" promptText="Provincia">
+                           <tooltip>
+                              <Tooltip text="Provincia del Domiclio Comercial" />
+                           </tooltip>
+                        </JFXComboBox>
+                        <JFXTextField fx:id="txtCodigoPostal" prefHeight="27.0" prefWidth="105.0" promptText="Código Postal">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Código Postal" />
+                           </tooltip>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtTelefonoFijo" promptText="Teléfono Fijo">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Teléfono Fijo. No obligatorio" />
+                           </tooltip>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtTelefonoMovil" promptText="Teléfono Móvil">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Teléfono Móvil. No Obligatorio" />
+                           </tooltip>
+                        </JFXTextField>
+                        <JFXComboBox fx:id="cmbSituacionFiscal" prefHeight="27.0" prefWidth="258.0" promptText="Situación Fiscal">
+                           <tooltip>
+                              <Tooltip text="Situación Fiscal" />
+                           </tooltip></JFXComboBox>
+                        <JFXTextField fx:id="txtDomicilioFiscal" prefHeight="27.0" prefWidth="307.0" promptText="Domicilio Fiscal">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Domicilio Fiscal" />
+                           </tooltip>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtPuntoVenta" prefHeight="27.0" prefWidth="114.0" promptText="Punto de Venta">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Punto de Venta" />
+                           </tooltip>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtCUIT" promptText="C.U.I.T.">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Nº de CUIT" />
+                           </tooltip></JFXTextField>
+                        <JFXTextField fx:id="txtIIBB" prefHeight="27.0" prefWidth="224.0" promptText="Nº IIBB/Convenio Multilateral">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Nº de IIBB o Convenio Multilateral" />
+                           </tooltip>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtImporteAfip" prefHeight="27.0" prefWidth="128.0" promptText="Importe AFIP">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Importe máximo para no nomenclar la factura" wrapText="true" />
+                           </tooltip>
+                        </JFXTextField>
+                        <JFXDatePicker fx:id="dpFechaInicio" prefHeight="29.0" prefWidth="209.0" promptText="Inicio de Actividades">
+                           <tooltip>
+                              <Tooltip text="Fecha de Inicio de Actividades" />
+                           </tooltip></JFXDatePicker>
+                        <JFXButton fx:id="btnCP" layoutX="270.0" layoutY="294.0" prefHeight="27.0" prefWidth="35.0" styleClass="btn-enviar" text="..." />
+                        <JFXTextField fx:id="txtDirectorioCP" prefHeight="27.0" prefWidth="205.0" promptText="Ingrese el Certificado de Producción">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Directorio para Certificados de Producción" />
+                           </tooltip>
+                        </JFXTextField>
+                        <JFXButton fx:id="btnCH" layoutX="311.0" layoutY="388.0" prefHeight="27.0" prefWidth="35.0" styleClass="btn-enviar" text="..." />
+                        <JFXTextField fx:id="txtDirectorioCH" prefHeight="27.0" prefWidth="262.0" promptText="Ingrese el Certificado de Homologación">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Directorio para Certificados de Homologación" />
+                           </tooltip>
+                        </JFXTextField>
+                        <JFXButton fx:id="btnClavePrivada" layoutX="250.0" layoutY="341.0" prefHeight="27.0" prefWidth="35.0" styleClass="btn-enviar" text="..." />
+                        <JFXTextField fx:id="txtDirectorioClavePrivada" prefHeight="27.0" prefWidth="205.0" promptText="Ingrese la Clave Privada">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Directorio para Clave Privada" />
+                           </tooltip>
+                        </JFXTextField>
+                        <JFXButton fx:id="btnFPDF" layoutX="250.0" layoutY="294.0" prefHeight="27.0" prefWidth="35.0" styleClass="btn-enviar" text="..." />
+                        <JFXTextField fx:id="txtFacturasPDF" layoutX="10.0" layoutY="294.0" prefHeight="27.0" prefWidth="262.0" promptText="Directorio para Facturas en PDF">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Directorio para Facturas en PDF" />
+                           </tooltip>
+                        </JFXTextField>
+                     </children>
+                  </FlowPane>
+               </children>
+               <padding>
+                  <Insets left="10.0" top="10.0" />
+               </padding>
+            </HBox>
+<HBox alignment="CENTER_RIGHT" fillHeight="false" prefHeight="47.0" prefWidth="823.0" spacing="5.0">
+<children>
+<Button id="custom-button-imageButton" fx:id="btnRecuperar" mnemonicParsing="false" prefHeight="30.0" prefWidth="210.0" style="-fx-background-color: #F9E79F; -fx-text-fill: Black;" text="Recuperar Configuración" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button id="custom-button-imageButton" fx:id="btnActualizar" mnemonicParsing="false" prefHeight="30.0" prefWidth="210.0" styleClass="btn-agregar" text="Actualizar" />
+</children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="2.0" right="5.0" />
+               </padding>
+</HBox>
+</children>
+</VBox>
+   </center>
+   <top>
+      <Pane prefHeight="55.0" prefWidth="1165.0" style="-fx-background-color: #566573;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imgConfiguracion" fitHeight="53.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="60.0" text="microVisus">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="66.0" layoutY="33.0" text="Configuración Inicial del Emisor">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblFecha" alignment="CENTER" layoutX="688.0" layoutY="1.0" prefHeight="20.0" prefWidth="77.0" text="01 Ago 2020" textAlignment="CENTER" textFill="WHITE" />
+            <Label fx:id="lblHora" alignment="CENTER" layoutX="681.0" layoutY="20.0" prefHeight="30.0" prefWidth="94.0" text="13:52:00" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </top>
+   <bottom>
+      <Pane prefHeight="26.0" prefWidth="1165.0" style="-fx-background-color: #212121;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="733.0" layoutY="5.0" text="Ver. 2.0">
+               <font>
+                  <Font name="System Italic" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="3.0" layoutY="5.0" text="© 2021 * Dignitas Software">
+               <font>
+                  <Font name="System Italic" size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </bottom>
+   <left>
+      <VBox prefHeight="455.0" prefWidth="156.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <TitledPane animated="false" collapsible="false" prefHeight="139.0" prefWidth="235.0" text="Tipo de Facturación">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+                     <children>
+                        <JFXRadioButton fx:id="rbProduccion" selected="true" text="Producción">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tgTipo" />
+                           </toggleGroup>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="rbHomologacion" text="Homologación" toggleGroup="$tgTipo" />
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" collapsible="false" prefHeight="139.0" prefWidth="235.0" text="Imprimir">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+                     <children>
+                        <JFXRadioButton fx:id="rbTickets" selected="true" text="Tickets">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tgImprimir" />
+                           </toggleGroup>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="rbFacturas" text="Facturas" toggleGroup="$tgImprimir" />
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+         </children>
+         <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </padding>
+      </VBox>
+   </left>
+</BorderPane>
